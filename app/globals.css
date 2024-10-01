@@ -48,13 +48,13 @@ body {
   background-color: #fff;
   border: 2px solid #000;
   border-radius: 5px;
-  overflow: hidden;
+  overflow: scroll;
   transform: rotateX(0deg);
   transition: 1s ease-in-out;
 }
 
 .envelope.open {
-  height: 80vh;
+  height: 60vh;
 }
 
 /* Flap (top part of the envelope) */
@@ -68,6 +68,25 @@ body {
   border-bottom: 2px solid #000;
   transform-origin: top;
   transition: transform 1s ease-in-out;
+}
+
+/* Add the red wax seal */
+.seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 1;
+  /* For a waxy 3D effect */
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.seal.open {
+  transform: translate(-50%, -100%);
+  opacity: 0;
 }
 
 /* Letter (inside the envelope) */
@@ -95,6 +114,16 @@ body {
 .envelope.open .letter {
   opacity: 1;
   transform: translateY(0);
+}
+
+.my-swiper {
+  margin: 10px 0;
+  height: 300px;
+  width: 100%;
+}
+
+.my-swiper image {
+  object-fit: cover;
 }
 
 /* Mobile styling adjustments */
